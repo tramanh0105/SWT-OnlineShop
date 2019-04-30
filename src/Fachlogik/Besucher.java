@@ -9,10 +9,6 @@ public class Besucher {
         return benutzername;
     }
 
-    public Warenkorb getWarenkorb() {
-        return warenkorb;
-    }
-
     public void setWarenkorb(Warenkorb warenkorb) {
         this.warenkorb = warenkorb;
     }

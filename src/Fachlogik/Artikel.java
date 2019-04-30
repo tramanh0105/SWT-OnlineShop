@@ -1,6 +1,9 @@
 package Fachlogik;
 
-public abstract class Artikel implements Comparable<Artikel> {
+
+import java.util.Observable;
+
+public abstract class Artikel extends Observable implements Comparable<Artikel> {
     private static long artikelID = 0;
     private double preis;
     private String bezeichnung;
@@ -30,16 +33,19 @@ public abstract class Artikel implements Comparable<Artikel> {
     }
 
     public void setZustand(ArtikelZustand zustand) {
-        this.zustand = zustand;
+        //if the current state of the article is "out of stock" gets changed to "available", we'll inform the
+        if(this.getZustand().toString().equals("AUSVERKAUFT") &&  this.zustand != zustand) {
+            this.zustand = zustand;
+            setChanged();
+            notifyObservers();
+        }
     }
 
     public static long getArtikelID() {
         return artikelID;
     }
 
-    public static void setArtikelID(long artikelID) {
-        Artikel.artikelID = artikelID;
-    }
+
 
     public long getFixeArtikelId() {
         return fixeArtikelId;
@@ -53,25 +59,15 @@ public abstract class Artikel implements Comparable<Artikel> {
         return preis;
     }
 
-    public void setPreis(double preis) {
-        this.preis = preis;
-    }
-
     public String getBezeichnung() {
         return bezeichnung;
     }
 
-    public void setBezeichnung(String bezeichnung) {
-        this.bezeichnung = bezeichnung;
-    }
 
     public String getHersteller() {
         return hersteller;
     }
 
-    public void setHersteller(String hersteller) {
-        this.hersteller = hersteller;
-    }
 
     @Override
     public String toString() {
@@ -88,5 +84,10 @@ public abstract class Artikel implements Comparable<Artikel> {
             return 1;
         else
             return -1;
+    }
+    //user can subscribe to an article in case the article out of stock
+
+    public void subscribe(Account account){
+        this.addObserver(account);
     }
 }

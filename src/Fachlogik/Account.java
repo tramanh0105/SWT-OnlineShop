@@ -1,9 +1,12 @@
 package Fachlogik;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
-public class Account {
+public class Account implements Observer {
     private static long account_id =1;
     private Warenkorb warenkorb;
     private String email;
@@ -111,5 +114,10 @@ public class Account {
                 "name='" + name + '\'' +
                 ", fixeAccountID=" + fixeAccountID +
                 '}';
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+        JOptionPane.showMessageDialog(null, "Das gewünschte Artikel ist wieder verfügbar");
     }
 }

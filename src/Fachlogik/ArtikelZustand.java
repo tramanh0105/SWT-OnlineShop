@@ -1,11 +1,21 @@
 package Fachlogik;
 
 public enum ArtikelZustand {
-    AUSVERKAUFT,
-    AVAILABLE
+    AUSVERKAUFT{
+        @Override
+        public ArtikelZustand changeState() {
+            return AVAILABLE;
+        }
+    },
+    AVAILABLE{
+        @Override
+        public ArtikelZustand changeState() {
+            return AUSVERKAUFT;
+        }
+    }
     ;
 
-
+    public abstract ArtikelZustand changeState();
     public static boolean isAvailable(ArtikelZustand state){
         boolean result = true;
         switch(state){

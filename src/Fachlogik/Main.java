@@ -6,9 +6,11 @@ import java.util.Collections;
 public class Main {
  public static void main (String []args) {
 
-     //creating articles
+    //creating states for articles
      ArtikelZustand zustand1 = ArtikelZustand.AUSVERKAUFT;
      ArtikelZustand zustand2 = ArtikelZustand.AVAILABLE;
+
+     //creating articles
      Artikel damUhr = new Damenuhr(186.0, "classic", zustand1, "Fossil",30);
      Artikel herrUhr = new Herrenuhr(500.0, "classic", zustand2,"Rolex", 42);
      Artikel armband = new Armband(50.0, "Leather", zustand2,"Daniel Wellington", 18, 2);
@@ -28,7 +30,8 @@ public class Main {
 
      //creatting Adresse, Fachlogik.Bestellung, Fachlogik.Warenkorb
     Adresse adresse = new Adresse("Kreisviertel",17,44147,"Dortmund");
-    Zahlungsmethode lastchrift = new Lastschrift("DE1212345","Egal","3545");
+    Zahlungsmethode lastchrift = new Lastschrift("Egal","3545","DEUTXX");
+    lastchrift.setStatus(BestellungStatus.BEARBEITET);
     Bestellung bestellung = new Bestellung(lastchrift,artikelListe);
     Warenkorb warenkorb = new Warenkorb();
 
@@ -36,19 +39,31 @@ public class Main {
     warenkorb.setArtikelListe(artikelListe);
     bestellung.setArtikelListe(artikelListe);
 
-    //create mew object Fachlogik.Account, Fachlogik.Rechnung
+    //create mew object Fachlogik.Account,
      Account acc = new Account(adresse);
      acc.setName("Tram Anh Nguyen");
+
+     //adding the order to account
+     acc.addBestellung(bestellung);
+     acc.bestellungSubscribe();
+     //paying the bill
+//     bestellung.getZahlungsmethode().bezahlen();
+     bestellung.bezahlen();
+
+     System.out.println(bestellung.getBestellStatus());
+
+     // create new object Rechnung
      Rechnung rechnung = new Rechnung();
      rechnung.setBestellung(bestellung);
      rechnung.setAccount(acc);
      rechnung.rechnungDrucke();
 
      //user subscribe to the product
-     damUhr.addObserver(acc);
+     damUhr.subscribe(acc);
 
-     //changing the state of the article
-     damUhr.setZustand(zustand2);
+     //changing the state of the article by adding more article
+     Lager lager = new Lager();
+//     lager.addArtikel(damUhr,2);
 
 
 

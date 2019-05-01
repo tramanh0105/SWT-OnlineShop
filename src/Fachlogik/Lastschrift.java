@@ -1,10 +1,10 @@
 package Fachlogik;
 
-public class Lastschrift extends Zahlungsmethode{
+public class Lastschrift extends Zahlungsmethode {
     private String kontoinhaber;
-    private  String bankleizahl;
+    private String bankleizahl;
 
-    public Lastschrift(String kartennummer, String kontoinhaber, String bankleizahl) {
+    public Lastschrift( String kartennummer, String kontoinhaber, String bankleizahl) {
         super(kartennummer);
         this.kontoinhaber = kontoinhaber;
         this.bankleizahl = bankleizahl;
@@ -26,8 +26,9 @@ public class Lastschrift extends Zahlungsmethode{
         this.bankleizahl = bankleizahl;
     }
 
-    @Override
-    public void bezahlen(double betrag) {
-        System.out.println("bezahlt mit Fachlogik.Lastschrift");
-    }
+//    @Override
+//    public void bezahlen() {
+//        super.bezahlen();
+//        System.out.println("bezahlt " + super.getZuzahlenBetrag() + " mit Lastschrift");
+//    }
 }

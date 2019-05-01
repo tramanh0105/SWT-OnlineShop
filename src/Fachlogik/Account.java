@@ -25,6 +25,13 @@ public class Account implements Observer {
         account_id ++;
     }
 
+    // user would be informed if there is any update about the order status
+    public  void bestellungSubscribe(){
+        for(Bestellung bestell : bestellungList){
+            bestell.addObserver(this);
+        }
+    }
+
     public Warenkorb getWarenkorb() {
         return warenkorb;
     }
@@ -37,9 +44,7 @@ public class Account implements Observer {
         return account_id;
     }
 
-    public static void setAccount_id(long account_id) {
-        Account.account_id = account_id;
-    }
+
 
     public String getEmail() {
         return email;
@@ -101,12 +106,16 @@ public class Account implements Observer {
         this.bestellungList = bestellungList;
     }
 
+    public void addBestellung (Bestellung bestellung){
+        if(!bestellungList.contains(bestellung)){
+            this.bestellungList.add(bestellung);
+        }
+    }
+
     public void bestellungAbbrechen(Bestellung bestellung) {
         if (bestellung != null)
             bestellung = null;
     }
-
-
 
     @Override
     public String toString() {
@@ -118,6 +127,11 @@ public class Account implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-        JOptionPane.showMessageDialog(null, "Das gewünschte Artikel ist wieder verfügbar");
+        if(o instanceof Artikel) {
+            JOptionPane.showMessageDialog(null, "Das gewünschte Artikel ist wieder verfügbar");
+        }
+        if(o instanceof Bestellung){
+            JOptionPane.showMessageDialog(null, "Die Bestellung ist " + ((Bestellung) o).getBestellStatus().toString().toLowerCase());
+        }
     }
 }

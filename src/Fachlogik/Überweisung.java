@@ -26,8 +26,9 @@ public class Überweisung extends Zahlungsmethode {
         this.bankleizahl = bankleizahl;
     }
 
-    @Override
-    public void bezahlen(double betrag) {
-        System.out.println("bezahlt mit Banküberweisung");
-    }
+//    @Override
+//    public void bezahlen() {
+//        super.bezahlen();
+//        System.out.println("bezahlt " + super.getZuzahlenBetrag() +" mit Banküberweisung");
+//    }
 }

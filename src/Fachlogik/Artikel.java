@@ -4,12 +4,15 @@ package Fachlogik;
 import java.util.Observable;
 
 public abstract class Artikel extends Observable implements Comparable<Artikel> {
+
     private static long artikelID = 0;
     private double preis;
     private String bezeichnung;
     private ArtikelZustand zustand;
     private String hersteller;
     private long fixeArtikelId;
+    private int anfangBestand = 0;
+
 
 //    public Fachlogik.Artikel( double preis, String bezeichnung, String hersteller) {
 //        this.preis = preis;
@@ -26,6 +29,14 @@ public abstract class Artikel extends Observable implements Comparable<Artikel> 
         this.hersteller = hersteller;
         fixeArtikelId = artikelID;
         artikelID ++;
+    }
+
+    public int getAnfangBestand() {
+        return anfangBestand;
+    }
+
+    public void setAnfangBestand(int anfangBestand) {
+        this.anfangBestand = anfangBestand;
     }
 
     public ArtikelZustand getZustand() {

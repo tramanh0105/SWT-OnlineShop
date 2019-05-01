@@ -1,15 +1,15 @@
 package Fachlogik;
 
+import java.sql.SQLOutput;
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Observable;
 
-public class Bestellung {
+public class Bestellung extends Observable {
     private static int bestellID = 1;
     private int fixeBestellID;
     private ArtikelListe artikelListe;
-    private enum BestellStatus {
-        BEABERTET, BEZAHLT, GELIEFERT, ZUGESTELLT;
-    }
-
+    private  BestellungStatus bestellStatus;
     private double betrag ;
     private String bestell_datum;
     private Zahlungsmethode zahlungsmethode;
@@ -17,10 +17,23 @@ public class Bestellung {
     public Bestellung(Zahlungsmethode zahlungsmethode, ArtikelListe artikelListe) {
         this.artikelListe = artikelListe;
         this.zahlungsmethode = zahlungsmethode;
+//        this.zahlungsmethode.setZuzahlenBetrag(this.getBetrag());
+        this.betrag = this.getBetrag();
         LocalDateTime date = LocalDateTime.now();
         this.bestell_datum = date.toString();
         this.fixeBestellID = bestellID;
+        this.bestellStatus = BestellungStatus.BEARBEITET;
         bestellID++;
+    }
+
+    public BestellungStatus getBestellStatus() {
+        return bestellStatus;
+    }
+
+    public void setBestellStatus() {
+        this.bestellStatus = this.bestellStatus.changeState();
+        setChanged();
+        notifyObservers();
     }
 
     public static int getBestellID() {
@@ -66,5 +79,10 @@ public class Bestellung {
     public void removeArtikelListe(ArtikelListe artikelListe){
         if(artikelListe != null)
             artikelListe = null;
+    }
+
+    public void bezahlen(){
+        this.setBestellStatus();
+        System.out.println("Bezahlt "+ this.betrag +" mit "+this.zahlungsmethode.getClass().getSimpleName());
     }
 }

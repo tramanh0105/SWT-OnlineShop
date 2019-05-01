@@ -3,7 +3,7 @@ package Fachlogik;
 public class KreditKarte extends Zahlungsmethode {
         private String karteinhaber;
 
-        public KreditKarte(String kartennummer, String karteinhaber) {
+        public KreditKarte ( String kartennummer, String karteinhaber) {
             super(kartennummer);
             this.karteinhaber = karteinhaber;
         }
@@ -16,11 +16,12 @@ public class KreditKarte extends Zahlungsmethode {
             this.karteinhaber = karteinhaber;
         }
 
-        @Override
-        public void bezahlen(double betrag) {
-            System.out.println("Bezahlt mit Kreditkarten");
-            System.out.println("Bezahlt mit Kreditkarten");
-        }
+//        @Override
+//        public void bezahlen() {
+//            super.bezahlen();
+//            System.out.println("Bezahlt "+ super.getZuzahlenBetrag()+ " mit Kreditkarten");
+//
+//        }
 
 
 }

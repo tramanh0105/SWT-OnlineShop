@@ -36,5 +36,9 @@ public class Warenkorb {
             artikelListe = null;
         }
     }
+    public void artikelZeigen(){
+        System.out.println(  this.artikelListe.druckeArtikelListe());
+
+    }
 
 }

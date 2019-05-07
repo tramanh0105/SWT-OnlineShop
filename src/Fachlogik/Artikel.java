@@ -1,6 +1,7 @@
 package Fachlogik;
 
 
+import java.util.Objects;
 import java.util.Observable;
 
 public abstract class Artikel extends Observable implements Comparable<Artikel> {
@@ -28,7 +29,7 @@ public abstract class Artikel extends Observable implements Comparable<Artikel> 
         this.zustand = zustand;
         this.hersteller = hersteller;
         fixeArtikelId = artikelID;
-        artikelID ++;
+        artikelID++;
     }
 
     public int getAnfangBestand() {
@@ -45,7 +46,7 @@ public abstract class Artikel extends Observable implements Comparable<Artikel> 
 
     public void setZustand(ArtikelZustand zustand) {
         //if the current state of the article is "out of stock" gets changed to "available", we'll inform the
-        if(this.getZustand().toString().equals("AUSVERKAUFT") &&  this.zustand != zustand) {
+        if (this.getZustand().toString().equals("AUSVERKAUFT") && this.zustand != zustand) {
             this.zustand = zustand;
             setChanged();
             notifyObservers();
@@ -55,7 +56,6 @@ public abstract class Artikel extends Observable implements Comparable<Artikel> 
     public static long getArtikelID() {
         return artikelID;
     }
-
 
 
     public long getFixeArtikelId() {
@@ -89,16 +89,36 @@ public abstract class Artikel extends Observable implements Comparable<Artikel> 
                 ", hersteller='" + hersteller + '\'' +
                 '}';
     }
+
     @Override
     public int compareTo(Artikel o) {
-        if(this.getPreis()>o.getPreis())
+        if (this.getPreis() > o.getPreis())
             return 1;
         else
             return -1;
     }
     //user can subscribe to an article in case the article out of stock
 
-    public void subscribe(Account account){
+    public void subscribe(Account account) {
         this.addObserver(account);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Artikel artikel = (Artikel) o;
+        return Double.compare(artikel.preis, preis) == 0 &&
+                fixeArtikelId == artikel.fixeArtikelId &&
+                anfangBestand == artikel.anfangBestand &&
+                bezeichnung.equals(artikel.bezeichnung) &&
+                zustand == artikel.zustand &&
+                hersteller.equals(artikel.hersteller);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(preis, bezeichnung, zustand, hersteller, fixeArtikelId, anfangBestand);
+    }
 }
+

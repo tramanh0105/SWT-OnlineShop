@@ -85,4 +85,17 @@ public class Bestellung extends Observable {
         this.setBestellStatus();
         System.out.println("Bezahlt "+ this.betrag +" mit "+this.zahlungsmethode.getClass().getSimpleName());
     }
+
+    @Override
+    public String toString() {
+        return "Bestellung{" +
+                "fixeBestellID=" + fixeBestellID +
+                ", artikelListe=" + artikelListe +
+                ", bestellStatus=" + bestellStatus +
+                ", betrag=" + betrag +
+                ", bestell_datum='" + bestell_datum + '\'' +
+                ", zahlungsmethode=" + zahlungsmethode.getClass().getSimpleName() +
+                '}'+"\n";
+
+    }
 }

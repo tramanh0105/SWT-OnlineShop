@@ -1,80 +1,61 @@
 package Fachlogik;
 
-public class User {
-    private Account acc;
-    private static long usernr;
-    private String name;
+import java.io.*;
+import java.util.Objects;
+
+public class User extends Besucher {
     private String benutzername;
     private String passwort;
-    private String email;
-    private String telefonnumer;
-    private String geburstdatum;
+    private static long usernr;
+    private Account acc;
     private long fixeUserNr;
 
-    public User(String benutzername, String passwort) {
+
+    public User(Validator validator,String benutzername, String passwort, Adresse adresse, String email) {
+        super(validator);
+        this.acc = new Account(adresse, email);
         this.benutzername = benutzername;
         this.passwort = passwort;
         fixeUserNr = usernr;
         usernr++;
-    }
-
-    public static long getUsernr() {
-        return usernr;
-    }
-
-    public static void setUsernr(int usernr) {
-        User.usernr = usernr;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+        validator.addUser(this);
     }
 
     public String getBenutzername() {
         return benutzername;
     }
 
-    public void setBenutzername(String benutzername) {
-        this.benutzername = benutzername;
-    }
-
     public String getPasswort() {
         return passwort;
     }
 
+//    public Validator getValidator() {
+//        return validator;
+//    }
+
     public void setPasswort(String passwort) {
         this.passwort = passwort;
+        super.getValidator().changePassword(this,passwort);
     }
 
-    public String getEmail() {
-        return email;
+//    public void setValidator(Validator validator) {
+//        this.validator = validator;
+//    }
+
+    public Account getAcc() {
+        return acc;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-        this.acc.setEmail(email);
+    public void setAcc(Account acc) {
+        this.acc = acc;
     }
 
-    public String getTelefonnumer() {
-        return telefonnumer;
+    public static long getUsernr() {
+        return usernr;
     }
 
-    public void setTelefonnumer(String telefonnumer) {
-        this.telefonnumer = telefonnumer;
-        this.acc.setTelefonnummer(telefonnumer);
-    }
-
-    public String getGeburstdatum() {
-        return geburstdatum;
-    }
-
-    public void setGeburstdatum(String geburstdatum) {
-        this.geburstdatum = geburstdatum;
-        this.acc.setGeburtsdatum(geburstdatum);
+    public static void setUsernr(long usernr) {
+        User.usernr = usernr;
     }
 
     public long getFixeUserNr() {
@@ -84,25 +65,22 @@ public class User {
     public void setFixeUserNr(long fixeUserNr) {
         this.fixeUserNr = fixeUserNr;
     }
-    public Account getAcc() {
-        return acc;
+
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return fixeUserNr == user.fixeUserNr &&
+                benutzername.equals(user.benutzername) &&
+                passwort.equals(user.passwort) &&
+                Objects.equals(acc, user.acc) ;
     }
 
-    public void setAcc(Account acc) {
-        this.acc = acc;
+    @Override
+    public int hashCode() {
+        return Objects.hash(benutzername, passwort, acc, fixeUserNr);
     }
-
-    public static void setUsernr(long usernr) {
-        User.usernr = usernr;
-    }
-
-    public void einloggen(String benutzername, String passwort){
-        acc.setEmail(this.email);
-        acc.setGeburtsdatum(this.geburstdatum);
-        acc.setTelefonnummer(this.telefonnumer);
-
-        System.out.println("Du hast dich eingeloggen");
-    }
-
-
 }

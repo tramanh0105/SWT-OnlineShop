@@ -1,5 +1,6 @@
 package Fachlogik;
 
+import java.io.File;
 import java.util.Arrays;
 import java.util.Collections;
 
@@ -40,7 +41,8 @@ public class Main {
     bestellung.setArtikelListe(artikelListe);
 
     //create mew object Fachlogik.Account,
-     Account acc = new Account(adresse);
+     String email ="tram.anh.1234@gmail.com";
+     Account acc = new Account(adresse,email);
      acc.setName("Tram Anh Nguyen");
 
      //adding the order to account
@@ -48,7 +50,7 @@ public class Main {
      acc.bestellungSubscribe();
      //paying the bill
 //     bestellung.getZahlungsmethode().bezahlen();
-     bestellung.bezahlen();
+//     bestellung.bezahlen();
 
      System.out.println(bestellung.getBestellStatus());
 
@@ -56,7 +58,7 @@ public class Main {
      Rechnung rechnung = new Rechnung();
      rechnung.setBestellung(bestellung);
      rechnung.setAccount(acc);
-     rechnung.rechnungDrucke();
+//     rechnung.rechnungDrucke();
 
      //user subscribe to the product
      damUhr.subscribe(acc);
@@ -65,6 +67,16 @@ public class Main {
      Lager lager = new Lager();
 //     lager.addArtikel(damUhr,2);
 
+     //a file to save username and password
+     Validator validator = new Validator();
+     Besucher anonymous = new Besucher(validator);
+     Besucher ano = new Besucher(validator);
+
+     anonymous.registrieren("tramanh","student",adresse,email);
+     ano.registrieren("tramanh","student",adresse,email);
+
+     ano.setWarenkorb(warenkorb);
+     warenkorb.artikelZeigen();
 
 
  }

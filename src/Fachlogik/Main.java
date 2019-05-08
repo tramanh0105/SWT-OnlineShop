@@ -23,6 +23,8 @@ public class Main {
      artikelListe.addArtikel(armband,1);
      artikelListe.removeArtikel(damUhr);
 
+  
+
      //sorting the article list in ascending price order
      Collections.sort(artikelListe.getArtikelList());
 
@@ -76,7 +78,7 @@ public class Main {
      ano.registrieren("tramanh","student",adresse,email);
 
      ano.setWarenkorb(warenkorb);
-     warenkorb.artikelZeigen();
+//     warenkorb.artikelZeigen();
 
 
  }

@@ -1,6 +1,7 @@
 package Fachlogik;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class ArtikelListe {
     private List<Artikel> artikelList;
@@ -61,6 +62,12 @@ public class ArtikelListe {
             list += a.toString() + "\n";
         }
         return list;
+    }
+    public List filter(String classname){
+        List<Artikel> filteredList =this.artikelList.stream().filter(a-> a.getClass().getSimpleName().equals(classname)).collect(Collectors.toList());
+        return filteredList;
+
+
     }
 
 }

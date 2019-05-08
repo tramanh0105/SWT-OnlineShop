@@ -49,7 +49,7 @@ public class LoginForm {
         HBox hb = new HBox();
         HBox hBox = new HBox();
         hBox.setSpacing(10);
-        hb.setPadding(new Insets(30, 30, 30, 30));
+        hb.setPadding(new Insets(20, 20, 20, 20));
 
         //Adding GridPane
         GridPane gridPane = new GridPane();
@@ -87,7 +87,7 @@ public class LoginForm {
 
         //DropShadow effect
         DropShadow dropShadow = new DropShadow();
-        dropShadow.setOffsetX(5);
+        dropShadow.setOffsetX(0);
         dropShadow.setOffsetY(5);
 
 
@@ -108,7 +108,7 @@ public class LoginForm {
         btnregis.setId("button");
         btnfortsetzen.setId("button");
         text.setId("text");
-        text.setFill(Color.WHITE);
+
 
 
         //Add HBox and GridPane layout to BorderPane Layout

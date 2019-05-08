@@ -5,26 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c331d14-437e-4a58-8e02-78b6765dbfc9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders.txt" beforeDir="false" afterPath="$PROJECT_DIR$/orders.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SWT-Project/Fachlogik/ArtikelListe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SWT-Project/Fachlogik/ArtikelListe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SWT-Project/Fachlogik/Besucher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SWT-Project/Fachlogik/Besucher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SWT-Project/Fachlogik/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SWT-Project/Fachlogik/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SWT-Project/Fachlogik/Validator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SWT-Project/Fachlogik/Validator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SWT-Project/GUI/GUITest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SWT-Project/GUI/GUITest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SWT-Project/GUI/LoginForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SWT-Project/GUI/LoginForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SWT-Project/GUI/RegisForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SWT-Project/GUI/RegisForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SWT-Project/login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Fachlogik/ArtikelListe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Fachlogik/ArtikelListe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Fachlogik/Besucher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Fachlogik/Besucher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Fachlogik/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Fachlogik/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Fachlogik/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Fachlogik/Validator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/GUITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GUITest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SWT-Project/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SWT-Project/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/LoginForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/LoginForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/RegisForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegisForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/users.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,14 +37,14 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5026362">
+    <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/GUI/GUITest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="312">
-                  <caret line="22" column="28" lean-forward="true" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+                <state relative-caret-position="-18">
+                  <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -69,8 +55,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/GUI/LoginForm.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="131">
-                  <caret line="50" column="28" lean-forward="true" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
+                <state relative-caret-position="1118">
+                  <caret line="110" selection-start-line="110" selection-end-line="110" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -78,20 +64,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/style.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="313">
-                  <caret line="31" selection-start-line="31" selection-end-line="31" />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/GUI/RegisForm.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="120">
-                  <caret line="81" column="37" selection-start-line="81" selection-start-column="37" selection-end-line="81" selection-end-column="37" />
+                <state relative-caret-position="264">
+                  <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -102,20 +79,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Fachlogik/Adresse.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="888">
+                <state relative-caret-position="284">
                   <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Fachlogik/ArtikelListe.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="288">
-                  <caret line="13" selection-start-line="13" selection-end-line="13" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -153,12 +118,15 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+        <leaf>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/style.css">
+            <entry file="file://$PROJECT_DIR$/src/GUI/LoginForm.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="312">
-                  <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+                <state relative-caret-position="56">
+                  <caret line="50" column="6" lean-forward="true" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -186,7 +154,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Warenkorb.java" />
         <option value="$PROJECT_DIR$/src/Kunde.java" />
         <option value="$PROJECT_DIR$/src/Besucher.java" />
         <option value="$PROJECT_DIR$/src/Damenuhr.java" />
@@ -235,6 +202,7 @@
         <option value="$PROJECT_DIR$/src/Fachlogik/ArtikelListe.java" />
         <option value="$PROJECT_DIR$/src/GUI/GUITest.java" />
         <option value="$PROJECT_DIR$/src/login.css" />
+        <option value="$PROJECT_DIR$/src/style.css" />
         <option value="$PROJECT_DIR$/src/GUI/LoginForm.java" />
         <option value="$PROJECT_DIR$/src/GUI/RegisForm.java" />
       </list>
@@ -261,6 +229,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -289,7 +258,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -433,18 +401,19 @@
       <workItem from="1557300126821" duration="10460000" />
       <workItem from="1557313865913" duration="3050000" />
       <workItem from="1557317753817" duration="62000" />
-      <workItem from="1557329053328" duration="5247000" />
+      <workItem from="1557329053328" duration="5795000" />
+      <workItem from="1557335051819" duration="2603000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158830000" />
+    <option name="totallyTimeSpent" value="161981000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13918306" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14145234" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -721,13 +690,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Fachlogik/Adresse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="888">
-          <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Fachlogik/ArtikelListe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -762,27 +724,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/style.css">
+    <entry file="file://$PROJECT_DIR$/src/Fachlogik/Adresse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="284">
+          <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/GUITest.java">
+    <entry file="file://$PROJECT_DIR$/src/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="22" column="28" lean-forward="true" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+        <state relative-caret-position="168">
+          <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/LoginForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1118">
+          <caret line="110" selection-start-line="110" selection-end-line="110" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/LoginForm.java">
+    <entry file="file://$PROJECT_DIR$/src/GUI/GUITest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="50" column="28" lean-forward="true" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
+        <state relative-caret-position="-18">
+          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -791,8 +760,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/RegisForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="81" column="37" selection-start-line="81" selection-start-column="37" selection-end-line="81" selection-end-column="37" />
+        <state relative-caret-position="264">
+          <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

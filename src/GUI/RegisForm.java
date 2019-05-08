@@ -35,21 +35,21 @@ public class RegisForm {
     public void display() {
         Stage window = new Stage();
         BorderPane bp = new BorderPane();
-        bp.setPadding(new Insets(50, 50, 50, 50));
+        bp.setPadding(new Insets(10, 50, 50, 50));
 
         //adding HBox
         HBox hBox = new HBox();
         HBox hb = new HBox();
 
-        hb.setSpacing(15);
-        hBox.setSpacing(20);
-        hBox.setPadding(new Insets(30,30,30,30));
+        hb.setSpacing(10);
+        hBox.setSpacing(10);
+        hb.setPadding(new Insets(20,20,20,20));
 
         //Adding GridPane
         GridPane gp = new GridPane();
-        gp.setPadding(new Insets(20, 20, 20, 20));
-        gp.setHgap(5);
-        gp.setVgap(10);
+        gp.setPadding(new Insets(30, 30, 30, 50));
+        gp.setHgap(10);
+        gp.setVgap(15);
         //Drop Shadow effect
         DropShadow dropShadow = new DropShadow();
         dropShadow.setOffsetX(5);
@@ -93,7 +93,7 @@ public class RegisForm {
         gp.add(btn, 1, 5);
         GridPane.setHgrow(passwort, Priority.ALWAYS);
         //adding elements to BorderPane
-        bp.setTop(text);
+        bp.setTop(hBox);
         bp.setCenter(gp);
 
         //adding scene
@@ -105,7 +105,7 @@ public class RegisForm {
         gp.setId("root");
         btn.setId("button");
         text.setId("text");
-        text.setFill(Color.WHITE);
+
 
         //link to css file
         scene.getStylesheets().add("style.css");

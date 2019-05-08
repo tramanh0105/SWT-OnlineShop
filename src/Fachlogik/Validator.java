@@ -12,9 +12,15 @@ import java.util.Map;
 import java.util.Set;
 
 public class Validator {
-    private HashMap<String,String> stringHashMap = new HashMap<>();
-    private Set<String> stringSet = new HashSet<>();
-    private File users = new File("users.txt");
+    private HashMap<String,String> stringHashMap ;
+    private Set<String> stringSet ;
+    private File users ;
+
+    public Validator() {
+        this.stringHashMap = new HashMap<>();
+        this.stringSet = new HashSet<>();
+        this.users = new File("users.txt");
+    }
 
     public boolean regisVerify(String benutzername){
         boolean validRegis = false;

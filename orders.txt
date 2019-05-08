@@ -1,1 +1,1 @@
-Bestellung{fixeBestellID=1, artikelListe=Fachlogik.ArtikelListe@27973e9b, bestellStatus=BEARBEITET, betrag=550.0, bestell_datum='2019-05-08T09:50:17.942', zahlungsmethode=Lastschrift}
+Bestellung{fixeBestellID=1, artikelListe=Fachlogik.ArtikelListe@6acbcfc0, bestellStatus=BEARBEITET, betrag=550.0, bestell_datum='2019-05-08T10:05:58.024', zahlungsmethode=Lastschrift}

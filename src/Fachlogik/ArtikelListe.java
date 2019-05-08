@@ -65,6 +65,7 @@ public class ArtikelListe {
     }
     public List filter(String classname){
         List<Artikel> filteredList =this.artikelList.stream().filter(a-> a.getClass().getSimpleName().equals(classname)).collect(Collectors.toList());
+
         return filteredList;
 
 

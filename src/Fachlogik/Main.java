@@ -23,7 +23,7 @@ public class Main {
      artikelListe.addArtikel(armband,1);
      artikelListe.removeArtikel(damUhr);
 
-  
+
 
      //sorting the article list in ascending price order
      Collections.sort(artikelListe.getArtikelList());

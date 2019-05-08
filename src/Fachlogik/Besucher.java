@@ -1,8 +1,9 @@
 package Fachlogik;
 
 
-import java.io.*;
-import java.sql.SQLOutput;
+import javafx.scene.control.Alert;
+
+
 
 
 public class Besucher {
@@ -101,9 +102,21 @@ public class Besucher {
         boolean found = false;
         found = this.validator.loginVerify(benutzername, passwort);
         if (found == true) {
-            System.out.println("Du hast dich erfolgreich eingeloggen");
+//            System.out.println("Du hast dich erfolgreich eingeloggen");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText("Hallo, "+ benutzername);
+            alert.setContentText("Du hast dich erfolgreich eingeloggen");
+
+            alert.showAndWait();
         } else {
             System.out.println("Die Benutzername oder Passwort ist falsch eingegeben.");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Dialog");
+            alert.setHeaderText("Fehler");
+            alert.setContentText("Die Benutzername oder Passwort ist falsch eingegeben.");
+
+            alert.showAndWait();
         }
     }
 }

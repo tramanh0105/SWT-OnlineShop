@@ -8,13 +8,13 @@
     -fx-font-weight: bold;
     -fx-effect: dropshadow(three-pass-box, rgba(155,155,155,0.8), 10, 0, 0, 0);
 }
-#button{
+.button{
     -fx-background-color: #00bfa5;
     -fx-background-radius: 22;
     -fx-text-fill: white;
 }
 /*-fx-background-color: linear-gradient(to bottom right, #ff7f50, #6a5acd);*/
-#button:hover {
+.button:hover {
     -fx-background-color: #616161;
     -fx-text-fill: white;
     -fx-background-radius: 22;

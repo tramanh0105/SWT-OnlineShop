@@ -13,7 +13,6 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.effect.Reflection;
 
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
@@ -64,7 +63,7 @@ public class LoginForm {
         this.txtUserName = new TextField();
         Label lblPassword = new Label("Password");
         this.pf = new PasswordField();
-        Button btnLogin = new Button("Login");
+        Button btnLogin = new Button("LoginController");
         Button btnregis = new Button("Registrieren");
 //        final Label lblMessage = new Label();
         Button btnfortsetzen = new Button("Fortsetzen als Anonymous");
@@ -106,7 +105,7 @@ public class LoginForm {
         gridPane.setId("root");
         btnLogin.setId("button");
         btnregis.setId("button");
-        btnfortsetzen.setId("button");
+                   btnfortsetzen.setId("button");
         text.setId("text");
 
 

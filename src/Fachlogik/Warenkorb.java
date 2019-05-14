@@ -2,7 +2,9 @@ package Fachlogik;
 
 import Fachlogik.ArtikelListe;
 
-public class Warenkorb {
+import java.io.Serializable;
+
+public class Warenkorb implements Serializable {
     private ArtikelListe artikelListe;
     private static int warenkorb_id = 1;
     private int fixewarenkorbID;

@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
-public class Account implements Observer {
+public class Account implements Observer, Serializable {
     private static long account_id = 1;
     private Warenkorb warenkorb;
     private String email;
@@ -17,23 +17,17 @@ public class Account implements Observer {
     private Adresse adress;
     private List<Bestellung> bestellungList;
     private long fixeAccountID;
-    File orders = new File("orders.txt");
+//    private File orders;
 
 
     public Account(Adresse adress, String email) {
         this.adress = adress;
         this.bestellungList = new ArrayList<>();
         this.warenkorb = new Warenkorb();
+        this.email = email;
         this.fixeAccountID = account_id;
         account_id++;
-    }
-
-    // user would be informed if there is any update about the order status
-    public void bestellungSubscribe() {
-
-        for (Bestellung bestell : bestellungList) {
-            bestell.addObserver(this);
-        }
+//        orders = new File(this.filePath+"/order.txt");
     }
 
     public Warenkorb getWarenkorb() {
@@ -109,45 +103,111 @@ public class Account implements Observer {
         this.bestellungList = bestellungList;
     }
 
+
+    // user would be informed if there is any update about the order status
+    public void bestellungSubscribe() {
+
+        for (Bestellung bestell : bestellungList) {
+            bestell.addObserver(this);
+        }
+    }
+
+    //create new file for storing orders info
+//    public void createFiles(String filePath) {
+////        if (orders!= null) {
+////            this.orders = new File(filePath + "/order.txt");
+////
+////        }
+//        if(userinfo !=null){
+//            this.userinfo = new File(filePath +"/info.txt");
+//        }
+//
+//
+//    }
+
     public void addBestellung(Bestellung bestellung) {
         if (!bestellungList.contains(bestellung)) {
             this.bestellungList.add(bestellung);
-            bestellungspeichern(bestellung);
+
         }
+
     }
 
     public void bestellungAbbrechen(Bestellung bestellung) {
-        if (bestellung != null)
-            bestellung = null;
+
+            this.bestellungList.remove(bestellung);
+
     }
 
-    public void bestellungspeichern(Bestellung bestellung) {
-        try (FileWriter fileWriter = new FileWriter(this.orders, false);
-             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
-            bufferedWriter.write(bestellung.toString());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void bestellungLaden() {
-        try (FileReader fileReader = new FileReader(this.orders);
-             BufferedReader bufferedReader = new BufferedReader(fileReader)) {
-            while (bufferedReader.readLine() != null) {
-                System.out.println(bufferedReader.readLine());
-
+//    public void bestellungspeichern() {
+//        //save the ordersobject to the orders file
+//        try (FileOutputStream fos = new FileOutputStream(this.orders);
+//             ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+//            oos.writeObject(this.bestellungList);
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
+        //save the accounts information to the userInfo file
+       public void userSpeichern(File file){
+            try(FileOutputStream fos = new FileOutputStream(file);
+                ObjectOutputStream oos = new ObjectOutputStream(fos) ){
+                oos.writeObject(this);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
+        }
+
+//        try (FileWriter fileWriter = new FileWriter(this.orders, false);
+//             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
+//            bufferedWriter.write(bestellung.toString());
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
+//    public void bestellungladen() {
+//        try (FileInputStream fis = new FileInputStream(this.orders);
+//             ObjectInputStream ois = new ObjectInputStream(fis)) {
+//            this.bestellungList=(List<Bestellung>) ois.readObject();
+//
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        }
+        public void Userladen(File file ){
+
+        try (FileInputStream fis = new FileInputStream(file);
+             ObjectInputStream ois = new ObjectInputStream(fis)) {
+
+            Account account =(Account) ois.readObject();
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
+//
     }
 
     @Override
     public String toString() {
-        return "Kunde {" +
-                "name='" + name + '\'' +
+        return "Account{" +
+                " Warenkorb=" + warenkorb +
+                ", email='" + email + '\'' +
+                ", geburtsdatum='" + geburtsdatum + '\'' +
+                ", telefonnummer='" + telefonnummer + '\'' +
+                ", name='" + name + '\'' +
+                ", adress=" + adress +
+                ", bestellungList=" + bestellungList +
                 ", fixeAccountID=" + fixeAccountID +
                 '}';
     }

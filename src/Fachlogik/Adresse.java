@@ -1,6 +1,8 @@
 package Fachlogik;
 
-public class Adresse {
+import java.io.Serializable;
+
+public class Adresse implements Serializable {
     private int plz;
     private String strasse;
     private int hausnummer;
@@ -46,7 +48,7 @@ public class Adresse {
 
     @Override
     public String toString() {
-        return "Fachlogik.Adresse{" +
+        return "Adresse{" +
                 ", strasse='" + strasse + '\'' +
                 ", hausnummer=" + hausnummer +
                  ", plz=" + plz +

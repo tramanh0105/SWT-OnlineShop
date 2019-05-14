@@ -3,22 +3,28 @@ package Fachlogik;
 import java.io.*;
 import java.util.Objects;
 
-public class User extends Besucher {
+public class User extends Besucher implements Serializable{
     private String benutzername;
     private String passwort;
     private static long usernr;
     private Account acc;
     private long fixeUserNr;
+    private File userFile ;
+
 
 
     public User(Validator validator,String benutzername, String passwort, Adresse adresse, String email) {
         super(validator);
-        this.acc = new Account(adresse, email);
         this.benutzername = benutzername;
+        this.acc = new Account(adresse, email);
         this.passwort = passwort;
         fixeUserNr = usernr;
         usernr++;
+        this.userFile = new File("database/UserData/"+this.benutzername+".txt");
+        acc.userSpeichern(this.userFile);
         validator.addUser(this);
+//        new File(filePath).mkdirs();
+//        this.acc.createFiles(filePath);
     }
 
     public String getBenutzername() {

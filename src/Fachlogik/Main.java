@@ -42,14 +42,14 @@ public class Main {
     warenkorb.setArtikelListe(artikelListe);
     bestellung.setArtikelListe(artikelListe);
 
-    //create mew object Fachlogik.Account,
+//    //create mew object Fachlogik.Account,
      String email ="tram.anh.1234@gmail.com";
-     Account acc = new Account(adresse,email);
-     acc.setName("Tram Anh Nguyen");
+//     Account acc = new Account(adresse,email);
+//     acc.setName("Tram Anh Nguyen");
 
      //adding the order to account
-     acc.addBestellung(bestellung);
-     acc.bestellungSubscribe();
+//     acc.addBestellung(bestellung);
+//     acc.bestellungSubscribe();
      //paying the bill
 //     bestellung.getZahlungsmethode().bezahlen();
 //     bestellung.bezahlen();
@@ -57,13 +57,13 @@ public class Main {
      System.out.println(bestellung.getBestellStatus());
 
      // create new object Rechnung
-     Rechnung rechnung = new Rechnung();
-     rechnung.setBestellung(bestellung);
-     rechnung.setAccount(acc);
+//     Rechnung rechnung = new Rechnung();
+//     rechnung.setBestellung(bestellung);
+//     rechnung.setAccount(acc);
 //     rechnung.rechnungDrucke();
 
      //user subscribe to the product
-     damUhr.subscribe(acc);
+//     damUhr.subscribe(acc);
 
      //changing the state of the article by adding more article
      Lager lager = new Lager();

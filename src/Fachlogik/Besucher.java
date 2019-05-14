@@ -4,15 +4,12 @@ package Fachlogik;
 import javafx.scene.control.Alert;
 
 
-
-
 public class Besucher {
 
 
-    private String besucherEmail;
     private Warenkorb warenkorb;
     private Validator validator;
-//    static File users = new File("users.txt");
+
 
     public Besucher(Validator validator) {
         this.validator = validator;
@@ -24,14 +21,6 @@ public class Besucher {
 
     public void setValidator(Validator validator) {
         this.validator = validator;
-    }
-
-    public String getEmail() {
-        return besucherEmail;
-    }
-
-    public void setEmail(String email) {
-        this.besucherEmail = email;
     }
 
 
@@ -63,8 +52,8 @@ public class Besucher {
 //    }
 
     public void registrieren(String benutzername, String passwort, Adresse adresse, String email) {
-        boolean valid = false;
-        valid = this.validator.regisVerify(benutzername);
+        boolean valid;
+        valid = this.validator.regisValidate(benutzername);
         if (valid == true) {
             User newUser = new User(this.validator, benutzername, passwort, adresse, email);
             newUser.setValidator(this.validator);
@@ -100,12 +89,12 @@ public class Besucher {
 
     public void einloggen(String benutzername, String passwort) {
         boolean found = false;
-        found = this.validator.loginVerify(benutzername, passwort);
+        found = this.validator.loginValidate(benutzername, passwort);
         if (found == true) {
 //            System.out.println("Du hast dich erfolgreich eingeloggen");
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Information Dialog");
-            alert.setHeaderText("Hallo, "+ benutzername);
+            alert.setHeaderText("Hallo, " + benutzername);
             alert.setContentText("Du hast dich erfolgreich eingeloggen");
 
             alert.showAndWait();

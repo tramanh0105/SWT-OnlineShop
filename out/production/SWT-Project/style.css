@@ -1,3 +1,4 @@
+
 #root{
     -fx-background-color: linear-gradient(to bottom , #f5f5f5, #bdbdbd);
     -fx-background-radius: 22;
@@ -22,6 +23,7 @@
 
 #bp{
     /*-fx-background-color: linear-gradient(to bottom, #616161,#bdbdbd );*/
+
     -fx-background-color: white;
 }
 #text{

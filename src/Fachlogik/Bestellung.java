@@ -1,11 +1,10 @@
 package Fachlogik;
 
-import java.sql.SQLOutput;
+import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Observable;
 
-public class Bestellung extends Observable {
+public class Bestellung extends Observable implements Serializable {
     private static int bestellID = 1;
     private int fixeBestellID;
     private ArtikelListe artikelListe;

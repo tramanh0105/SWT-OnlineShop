@@ -151,7 +151,7 @@ public class Account implements Observer, Serializable {
 //        }
 //    }
         //save the accounts information to the userInfo file
-       public void userSpeichern(File file){
+       public void accSpeichern(File file){
             try(FileOutputStream fos = new FileOutputStream(file);
                 ObjectOutputStream oos = new ObjectOutputStream(fos) ){
                 oos.writeObject(this);
@@ -181,12 +181,12 @@ public class Account implements Observer, Serializable {
 //        } catch (ClassNotFoundException e) {
 //            e.printStackTrace();
 //        }
-        public void Userladen(File file ){
-
+        public Account accLaden(File file ){
+        Account acc = null ;
         try (FileInputStream fis = new FileInputStream(file);
              ObjectInputStream ois = new ObjectInputStream(fis)) {
 
-            Account account =(Account) ois.readObject();
+             acc = (Account) ois.readObject();
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -195,7 +195,7 @@ public class Account implements Observer, Serializable {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-//
+        return acc;
     }
 
     @Override

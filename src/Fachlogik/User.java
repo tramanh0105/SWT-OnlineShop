@@ -21,7 +21,7 @@ public class User extends Besucher implements Serializable{
         fixeUserNr = usernr;
         usernr++;
         this.userFile = new File("database/UserData/"+this.benutzername+".txt");
-        acc.userSpeichern(this.userFile);
+        acc.accSpeichern(this.userFile);
         validator.addUser(this);
 //        new File(filePath).mkdirs();
 //        this.acc.createFiles(filePath);
